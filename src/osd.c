@@ -31,7 +31,7 @@ xosd* osd_init()
 
 void osd_bar(xosd* osd, int type, int level) {
     // the size of the increment
-    static int inc_size = 100.0 / (MAX_BRIGHT - 1);
+    static int inc_size = 100.0 / (MAX_BRIGHT);
     int pos;
         
     char title[127] = {'\0'};
@@ -43,7 +43,7 @@ void osd_bar(xosd* osd, int type, int level) {
         sprintf(title, _("Brightness"));
         xosd_display (osd, 0, XOSD_string, title);
         if (level == MAX_BRIGHT) pos = 100;
-        else pos = level * inc_size - inc_size;
+        else pos = (level) * inc_size;
         xosd_display (osd, 1, XOSD_slider, pos);
     }
 }
