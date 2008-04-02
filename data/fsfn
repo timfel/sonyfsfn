@@ -14,12 +14,11 @@ fi
 case "$1" in
     start)
         log_begin_msg "Starting fsfn key handler"
-	chmod +r /dev/input/event1
         start-stop-daemon --start \
                     --nicelevel 10 \
 		    --background \
-                    --pidfile /var/run/fsfn.pid \
-                    -x "/usr/local/bin/fsfn"
+                    --pidfile /var/run/fsfnd.pid \
+                    -x "$(which fsfnd)"
         log_end_msg $?
     ;;
     stop)
@@ -36,12 +35,12 @@ case "$1" in
         start-stop-daemon --start \
                     --nicelevel 10 \
                     --background \
-                    --pidfile /var/run/fsfn.pid \
-                    -x "/usr/local/bin/fsfn"
+                    --pidfile /var/run/fsfnd.pid \
+                    -x "$(which fsfnd)"
 	log_end_msg $?
     ;;
     *)
-        log_success_msg "Usage: /etc/init.d/fsfn {start|stop}"
+        log_success_msg "Usage: /etc/init.d/fsfn {start|stop|restart}"
         exit 1
 esac
 

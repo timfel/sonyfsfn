@@ -12,14 +12,36 @@ AC_AIX
 AC_ISC_POSIX
 AC_MINIX
 AC_STDC_HEADERS
+AC_CHECK_HEADERS([pthread.h stdlib.h string.h unistd.h X11/Xdefs.h])
 AC_PROG_RANLIB
+AM_GNU_GETTEXT([external])
 
-AC_CONFIG_FILES([
+############### DEBUG ##############
+AC_ARG_ENABLE(debug-mode,
+	         [  --enable-debug-mode	enable debug mode],
+			 debug="yes", debug="no")
+			 
+if test $debug = "yes" ; then
+	AC_DEFINE(DEBUG, 1, [ ])
+fi
+
+############### XOSD ##############
+xosd="yes"
+AC_CHECK_HEADER(xosd.h,
+		[AC_DEFINE(XOSD, 1, [ ])], xosd="no")
+
+if test $xosd = "no" ; then
+	echo "ERROR: We require XOSD (libxosd-dev on Debian)"
+	exit -1
+fi
+
+AC_CONFIG_FILES([ po/Makefile.in
    Makefile
    README
    doc/Makefile
    m4/Makefile
    src/Makefile
+   data/Makefile
 ])
 
 AC_OUTPUT

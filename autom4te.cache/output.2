@@ -4554,7 +4554,7 @@ else
 fi
 
 
-ac_config_files="$ac_config_files Makefile README doc/Makefile m4/Makefile src/Makefile"
+ac_config_files="$ac_config_files po/Makefile.in Makefile README doc/Makefile m4/Makefile src/Makefile"
 
 
 cat >confcache <<\_ACEOF
@@ -5136,6 +5136,7 @@ do
   case $ac_config_target in
     "config.h") CONFIG_HEADERS="$CONFIG_HEADERS config.h" ;;
     "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
+    "po/Makefile.in") CONFIG_FILES="$CONFIG_FILES po/Makefile.in" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "README") CONFIG_FILES="$CONFIG_FILES README" ;;
     "doc/Makefile") CONFIG_FILES="$CONFIG_FILES doc/Makefile" ;;

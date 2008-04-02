@@ -1,12 +1,13 @@
 #include "osd.h"
 #include "define.h"
+#include "../config.h"
 
 xosd* osd_init()
 {
     xosd* disp_obj;
-    /* setlocale(LC_ALL, "");
+    setlocale(LC_ALL, "");
     bindtextdomain (PACKAGE, LOCALEDIR);
-    textdomain (PACKAGE); */
+    textdomain (PACKAGE);
 
     
     disp_obj = xosd_create(2);

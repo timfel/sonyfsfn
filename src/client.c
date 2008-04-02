@@ -1,6 +1,7 @@
 #include "inotice.h"
 #include "osd.h"
 #include "define.h"
+#include "../config.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -97,11 +98,15 @@ int main () {
 
     while(1) {
         num = in_get(ifd);
-        printf("%d Events recorded\n", num);
-        fflush(stdout);
+        #ifdef DEBUG
+            printf("%d Events recorded\n", num);
+            fflush(stdout);
+        #endif
         action = fileread(&val);
-        printf("Got type %d, and value %d\n", action, val);
-        fflush(stdout);
+        #ifdef DEBUG
+            printf("Got type %d, and value %d\n", action, val);
+            fflush(stdout);
+        #endif
         actions(osd, action, val);
     }
 
