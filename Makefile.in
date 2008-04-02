@@ -35,9 +35,10 @@ subdir = .
 DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in $(srcdir)/README.in \
 	$(srcdir)/config.h.in $(top_srcdir)/configure ABOUT-NLS \
-	AUTHORS COPYING ChangeLog INSTALL NEWS THANKS \
-	config/config.guess config/config.rpath config/config.sub \
-	config/depcomp config/install-sh config/missing
+	AUTHORS COPYING ChangeLog INSTALL NEWS THANKS config.guess \
+	config.sub config/config.guess config/config.rpath \
+	config/config.sub config/depcomp config/install-sh \
+	config/missing
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/gettext.m4 \
 	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/lib-ld.m4 \
@@ -121,6 +122,7 @@ MSGFMT_015 = @MSGFMT_015@
 MSGMERGE = @MSGMERGE@
 OBJEXT = @OBJEXT@
 PACKAGE = @PACKAGE@
+PACKAGE_BIN_DIR = @PACKAGE_BIN_DIR@
 PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
 PACKAGE_NAME = @PACKAGE_NAME@
 PACKAGE_STRING = @PACKAGE_STRING@

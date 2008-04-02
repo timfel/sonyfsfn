@@ -20,6 +20,7 @@ set -e
 
 case "$1" in
     configure)
+	update-rc.d fsfn defaults 99 20
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

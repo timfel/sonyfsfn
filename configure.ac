@@ -16,6 +16,17 @@ AC_CHECK_HEADERS([pthread.h stdlib.h string.h unistd.h X11/Xdefs.h])
 AC_PROG_RANLIB
 AM_GNU_GETTEXT([external])
 
+if test "x${prefix}" = "xNONE"; then
+   PACKAGE_BIN_DIR="${ac_default_prefix}/bin"
+else
+   PACKAGE_BIN_DIR="${prefix}/bin"
+fi
+
+AC_SUBST(PACKAGE_BIN_DIR)
+cat data/fsfn.in | sed "s#@PREFIX@#$PACKAGE_BIN_DIR#g" > data/fsfn
+chmod +x data/fsfn
+
+
 ############### DEBUG ##############
 AC_ARG_ENABLE(debug-mode,
 	         [  --enable-debug-mode	enable debug mode],
@@ -45,3 +56,5 @@ AC_CONFIG_FILES([ po/Makefile.in
 ])
 
 AC_OUTPUT
+
+

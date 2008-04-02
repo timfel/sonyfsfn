@@ -1,0 +1,1 @@
+shlibs:Depends=libxosd2 (>= 2.2.13), libc6 (>= 2.7-1)

@@ -2,11 +2,15 @@ Source: sonyfsfn
 Section: unknown
 Priority: extra
 Maintainer: Tim Felgentreff <timfelgentreff@gmail.com>
-Build-Depends: debhelper (>= 5), autotools-dev
+Build-Depends: debhelper (>= 5), autotools-dev, libxosd-dev
 Standards-Version: 3.7.2
 
 Package: sonyfsfn
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: ${shlibs:Depends}, libxosd2
+Description: Sony VAIO FS-Series Fn-Tool
+ Daemon and client to utilize the Sony VAIO FS-Series'
+ Fn-Keys and map functions to them.
+ Controlled by simple, three-line file in $HOME/.fsfnc
+ First line is Fn+F7 Command, second for Fn+F10 and 
+ third for Fn+F12

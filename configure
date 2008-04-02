@@ -719,6 +719,7 @@ INTLLIBS
 LIBINTL
 LTLIBINTL
 POSUB
+PACKAGE_BIN_DIR
 LIBOBJS
 LTLIBOBJS'
 ac_subst_files=''
@@ -6955,6 +6956,17 @@ _ACEOF
 
 
 
+if test "x${prefix}" = "xNONE"; then
+   PACKAGE_BIN_DIR="${ac_default_prefix}/bin"
+else
+   PACKAGE_BIN_DIR="${prefix}/bin"
+fi
+
+
+cat data/fsfn.in | sed "s#@PREFIX@#$PACKAGE_BIN_DIR#g" > data/fsfn
+chmod +x data/fsfn
+
+
 ############### DEBUG ##############
 # Check whether --enable-debug-mode was given.
 if test "${enable_debug_mode+set}" = set; then
@@ -7925,11 +7937,12 @@ INTLLIBS!$INTLLIBS$ac_delim
 LIBINTL!$LIBINTL$ac_delim
 LTLIBINTL!$LTLIBINTL$ac_delim
 POSUB!$POSUB$ac_delim
+PACKAGE_BIN_DIR!$PACKAGE_BIN_DIR$ac_delim
 LIBOBJS!$LIBOBJS$ac_delim
 LTLIBOBJS!$LTLIBOBJS$ac_delim
 _ACEOF
 
-  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 9; then
+  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 10; then
     break
   elif $ac_last_try; then
     { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5
@@ -8640,4 +8653,6 @@ if test "$no_create" != yes; then
   # would make configure fail if this is the last instruction.
   $ac_cs_success || { (exit 1); exit 1; }
 fi
+
+
 

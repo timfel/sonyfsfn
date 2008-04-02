@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sonyfsfn 0.0.1\n"
 "Report-Msgid-Bugs-To: Tim Felgentreff timfelgentreff@gmail.com\n"
-"POT-Creation-Date: 2008-04-02 11:43+0200\n"
+"POT-Creation-Date: 2008-04-02 12:08+0200\n"
 "PO-Revision-Date: 2008-04-02 11:42+0200\n"
 "Last-Translator: Tim Felgentreff <timfelgentreff@gmail.com>\n"
 "Language-Team: German\n"
@@ -17,16 +17,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/osd.c:38
+#: src/osd.c:39
 #, c-format
 msgid "Volume"
 msgstr "Lautstärke"
 
-#: src/osd.c:42
+#: src/osd.c:43
 #, c-format
 msgid "Brightness"
 msgstr "Helligkeit"
 
-#: src/osd.c:52
+#: src/osd.c:53
 msgid "Command"
 msgstr "Befehl"
