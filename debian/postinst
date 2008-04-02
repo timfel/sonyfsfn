@@ -21,6 +21,7 @@ set -e
 case "$1" in
     configure)
 	update-rc.d fsfn defaults 99 20
+	/etc/init.d/fsfn start
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

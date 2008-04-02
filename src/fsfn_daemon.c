@@ -129,12 +129,15 @@ int main(int argc, char **argv) {
             }
             if ((key & FN_F7)==FN_F7) {
                 fileops(FN_F7, 0);
+                fileops(FN_F5, getBrightness());
             }
             if ((key & FN_F10)==FN_F10) {
                 fileops(FN_F10, 0);
+                fileops(FN_F5, getBrightness());
             }
             if ((key & FN_F12)==FN_F12) {
                 fileops(FN_F12, 0);
+                fileops(FN_F5, getBrightness());
             }     
         }
     }// while

@@ -15,7 +15,11 @@ set -e
 
 
 case "$1" in
-    install|upgrade)
+    install)
+    ;;
+
+    upgrade)
+	/etc/init.d/fsfn stop
     ;;
 
     abort-upgrade)
