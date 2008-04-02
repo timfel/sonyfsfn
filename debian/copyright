@@ -1,0 +1,22 @@
+This package was debianized by Tim Felgentreff <timfelgentreff@gmail.com> on
+Wed, 02 Apr 2008 11:52:15 +0200.
+
+It was downloaded from <url://example.com>
+
+Upstream Author(s): 
+
+    Tim Felgentreff <timfelgentreff@gmail.com>
+
+Copyright: 
+
+    Copyright (C) 2008 Tim Felgentreff
+
+License:
+
+    GPLv3
+
+The Debian packaging is (C) 2008, Tim Felgentreff <timfelgentreff@gmail.com> and
+is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
+
+# Please also look if there are files or directories which have a
+# different copyright/license attached and list them here.
