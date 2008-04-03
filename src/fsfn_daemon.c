@@ -65,6 +65,8 @@ int main(int argc, char **argv) {
     /* Volume */
     int value = 0;
 
+    fileops(0, 0);
+
     /* open event interface*/
     if (argc != 2) {
         /* i don't like outputs...
