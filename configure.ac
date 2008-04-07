@@ -24,9 +24,15 @@ fi
 
 AC_SUBST(PACKAGE_BIN_DIR)
 
-if [[ -e /etc/make.conf ]]; then
+
+############# GENTOO ##############
+AC_ARG_ENABLE(gentoo,
+                 [  --enable-gentoo	enable initscript for gentoo],
+                         gentoo="yes", gentoo="no")
+
+if test $gentoo = "yes" ; then
 	DISTRO="gentoo"
-	cat data/fsfn.gentoo | sed "s#@PREFIX@#$PACKAGE_BIN_DIR#g" > data/fsfn
+        cat data/fsfn.gentoo | sed "s#@PREFIX@#$PACKAGE_BIN_DIR#g" > data/fsfn
 else
 	DISTRO="debian or else"
 	cat data/fsfn.debian | sed "s#@PREFIX@#$PACKAGE_BIN_DIR#g" > data/fsfn
