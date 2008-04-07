@@ -23,7 +23,15 @@ else
 fi
 
 AC_SUBST(PACKAGE_BIN_DIR)
-cat data/fsfn.in | sed "s#@PREFIX@#$PACKAGE_BIN_DIR#g" > data/fsfn
+
+if [[ -e /etc/make.conf ]]; then
+	DISTRO="gentoo"
+	cat data/fsfn.gentoo | sed "s#@PREFIX@#$PACKAGE_BIN_DIR#g" > data/fsfn
+else
+	DISTRO="debian or else"
+	cat data/fsfn.debian | sed "s#@PREFIX@#$PACKAGE_BIN_DIR#g" > data/fsfn
+fi
+
 chmod +x data/fsfn
 
 
@@ -58,3 +66,9 @@ AC_CONFIG_FILES([ po/Makefile.in
 AC_OUTPUT
 
 
+echo
+echo "*********** SONY FS-FN DRIVER *************"
+echo "bindir ................................ $PACKAGE_BIN_DIR"
+echo "distro ................................ $DISTRO"
+echo
+echo "make, make install"
