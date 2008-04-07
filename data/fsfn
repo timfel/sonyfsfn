@@ -11,7 +11,7 @@ if ! test -e /sys/devices/platform/sony-laptop/fnkey ; then
     exit 1
 fi
 
-daemon=/usr/bin/fsfnd
+daemon=/usr/local/bin/fsfnd
 
 case "$1" in
     start)
