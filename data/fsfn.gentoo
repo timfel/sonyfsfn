@@ -21,7 +21,9 @@ start() {
 
 stop() {
 	eend "Stopping fsfn key handler..."
+	daemon=@PREFIX@/fsfnd
 	start-stop-daemon --stop --exec "$daemon"
+	killproc fsfnd
         eend $?
 }
 
@@ -29,3 +31,12 @@ restart() {
 	svc_stop
 	svc_start
 }
+
+killproc() {
+        ps -ea | grep $1 | awk '$1 ~ /^[^SI]/ { system("kill -15 " $1); }'
+        sleep 1
+        ps -ea | grep $1 | awk '$1 ~ /^[^SI]/ { system("kill -2 " $1); }'
+        sleep 1
+        ps -ea | grep $1 | awk '$1 ~ /^[^SI]/ { system("kill -1 " $1); }'
+}
+

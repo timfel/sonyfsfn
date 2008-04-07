@@ -40,7 +40,6 @@ fi
 
 chmod +x data/fsfn
 
-
 ############### DEBUG ##############
 AC_ARG_ENABLE(debug-mode,
 	         [  --enable-debug-mode	enable debug mode],
